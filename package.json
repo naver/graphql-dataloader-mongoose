@@ -1,0 +1,45 @@
+{
+  "name": "graphql-dataloader-mongoose",
+  "version": "1.0.0",
+  "description": "graphql dataloader generator based on mongoose model",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "tslint -p tsconfig.json",
+    "build": "tsc --build",
+    "test": "mocha -r ts-node/register src/__test__/**/*.ts",
+    "prepare": "yarn run build",
+    "prepublishOnly": "yarn test && yarn run lint"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "author": {
+    "name": "HANSUK KIM",
+    "email": "hansuk.kim@navercorp.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naver/graphql-dataloader-mongoose"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/lodash": "^4.14.136",
+    "@types/mocha": "^5.2.7",
+    "@types/mongoose": "^5.5.8",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "mongodb-memory-server": "^5.1.5",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "dataloader": "^1.4.0",
+    "lodash": "^4.17.14",
+    "mongoose": "^5.6.4"
+  }
+}

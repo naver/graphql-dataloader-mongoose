@@ -1,0 +1,8 @@
+node_modules
+/lib
+.cache
+.vscode
+.DS_Store
+.idea
+yarn-error.log
+npm-debug.log
