@@ -1,6 +1,6 @@
 {
   "name": "graphql-dataloader-mongoose",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "graphql dataloader generator based on mongoose model",
   "main": "lib/index.js",
   "scripts": {
@@ -22,6 +22,11 @@
     "type": "git",
     "url": "https://github.com/naver/graphql-dataloader-mongoose"
   },
+  "keywords": [
+    "graphql",
+    "dataloader",
+    "mongoose"
+  ],
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/lodash": "^4.14.136",
