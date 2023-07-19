@@ -4,7 +4,7 @@
  * MIT license
  */
 import { default as _ } from 'lodash';
-import { Model, Document } from 'mongoose';
+import { Model, Document, FilterQuery } from 'mongoose';
 import { default as DataLoader } from 'dataloader';
 
 type LoaderKey = string | number | symbol;
@@ -30,7 +30,7 @@ class MongooseDataloader<K extends LoaderKey, V extends Document> {
 
   private createLoader(key: K) {
     return new DataLoader<K, V>(ids =>
-      this.mongooseModel.find({ [key]: { $in: ids } }).then(list => {
+      this.mongooseModel.find({ [key]: { $in: ids } } as FilterQuery<V>).then(list => {
         const listByKey = _.keyBy(list, key);
         return ids.map(id => _.get(listByKey, id, null));
       }),
