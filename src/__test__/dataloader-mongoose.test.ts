@@ -6,18 +6,12 @@ import { MongooseDataloaderFactory } from '../index';
 let mongoServer: MongoMemoryServer;
 let mongoose: Mongoose;
 
-before(done => {
-  mongoServer = new MongoMemoryServer();
+before(async () => {
+  mongoServer = await MongoMemoryServer.create();
   mongoose = new Mongoose();
 
-  mongoServer
-    .getConnectionString()
-    .then(mongoUri => {
-      return mongoose.connect(mongoUri, { useNewUrlParser: true }, err => {
-        if (err) done(err);
-      });
-    })
-    .then(() => done());
+  const mongoUri = mongoServer.getUri();
+  return await mongoose.connect(mongoUri);
 });
 
 after(() => {
@@ -67,9 +61,9 @@ describe('MongooseDataloaderFactory', () => {
     const testUserId2 = 'testUser2';
     const testUserId3 = 'testUser3';
 
-    user.create({ userId: testUserId1 });
-    user.create({ userId: testUserId2 });
-    user.create({ userId: testUserId3 });
+    await user.create({ userId: testUserId1 });
+    await user.create({ userId: testUserId2 });
+    await user.create({ userId: testUserId3 });
 
     const testData1 = await dataloader.load(testUserId1);
     const testData2 = await dataloader.load(testUserId2);

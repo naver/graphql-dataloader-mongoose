@@ -1,6 +1,6 @@
 {
   "name": "graphql-dataloader-mongoose",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "graphql dataloader generator based on mongoose model",
   "main": "lib/index.js",
   "scripts": {
@@ -33,17 +33,17 @@
     "@types/mocha": "^5.2.7",
     "chai": "^4.2.0",
     "mocha": "^6.1.4",
-    "mongodb-memory-server": "^5.1.5",
+    "mongodb-memory-server": "^10.0.0",
     "prettier": "^1.18.2",
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "4.1.x"
+    "typescript": "5.3.x"
   },
   "dependencies": {
     "dataloader": "^1.4.0",
     "lodash": "^4.17.14",
-    "mongoose": "^5.13.20"
+    "mongoose": "^8.5.2"
   }
 }
